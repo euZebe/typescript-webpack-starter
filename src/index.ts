@@ -1,11 +1,11 @@
 class Greeter {
     constructor(public greeting: string) { }
     greet() {
-        console.log('mission done !!')
+        console.log("mission successful !!");
         return "<h1>" + this.greeting + "</h1>";
     }
 };
 
-var greeter = new Greeter("Hellooooo, Quentin !");
-    
+let greeter = new Greeter("Hellooooo, Quentin !");
+
 document.body.innerHTML = greeter.greet();

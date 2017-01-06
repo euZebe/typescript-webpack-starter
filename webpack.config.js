@@ -38,6 +38,13 @@ module.exports = {
   },
 
   module: {
+
+    preLoaders: [
+      {
+        test: /\.ts$/,
+        loader: 'tslint-loader'
+      }
+    ],
     // liste de nos loaders
     // ! \\ à noter que les loaders sont exécutés en ordre inverse
     // les premiers en dernier, en utilisant la sortie du suivant
@@ -177,4 +184,12 @@ module.exports = {
     sourcemap: !production,
     compress: production,
   },
+
+  tslint: {
+    "extends": "tslint:recommended",
+    "rules": {
+      "use-strict": true,
+      "quotemark": [ true, "double" ]
+    }
+  }
 }
