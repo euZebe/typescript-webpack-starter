@@ -4,6 +4,6 @@ export class Person {
     }
 
     toString(): String {
-        return this.firstName + " " + this.lastName;
+        return `${this.firstName} ${this.lastName}`;
     }
 }
