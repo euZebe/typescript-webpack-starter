@@ -8,9 +8,9 @@ class Greeter {
     }
 };
 
-let greeter = new Greeter("Hellooooo, Quentin !");
+const greeter = new Greeter("Hellooooo, Quentin !");
 
 document.body.innerHTML = greeter.greet();
 
-let person = new Person("James", "Bond");
+const person = new Person("James", "Bond");
 document.body.innerHTML += person.toString();
