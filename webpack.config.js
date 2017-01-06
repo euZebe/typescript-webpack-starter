@@ -11,7 +11,7 @@ module.exports = {
   // (on peut en définir plusieurs)
   entry: {
     index: [
-      "./src/index.js",
+      "./src/index.ts",
     ],
   },
 
@@ -44,7 +44,7 @@ module.exports = {
     loaders: [
       {
         // pour tous les fichiers qui finissent par .js
-        test: /\.js$/,
+        test: /\.ts$/,
         // ... en prenant bien soin d'exclure les node_modules
         exclude: /node_modules/,
 
@@ -53,6 +53,7 @@ module.exports = {
         // ("rien" est une option tout à fait valable si vous codez en ES5
         // sans linter)
         loaders: [
+          'ts-loader'
         ],
 
         // à noter que l'on peut définir les loaders de cette façon

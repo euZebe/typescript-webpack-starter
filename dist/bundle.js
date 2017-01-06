@@ -47,13 +47,13 @@
   \*******************/
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(/*! ./src/index.js */1);
+	module.exports = __webpack_require__(/*! ./src/index.ts */1);
 
 
 /***/ },
 /* 1 */
 /*!**********************!*\
-  !*** ./src/index.js ***!
+  !*** ./src/index.ts ***!
   \**********************/
 /***/ function(module, exports) {
 
@@ -62,12 +62,13 @@
 	        this.greeting = greeting;
 	    }
 	    Greeter.prototype.greet = function () {
+	        console.log('mission done !!');
 	        return "<h1>" + this.greeting + "</h1>";
 	    };
 	    return Greeter;
 	}());
 	;
-	var greeter = new Greeter("Hello, world!");
+	var greeter = new Greeter("Hellooooo, Quentin !");
 	document.body.innerHTML = greeter.greet();
 
 
