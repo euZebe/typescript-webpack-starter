@@ -32,6 +32,7 @@ module.exports = {
     // browserify)
     extensions: [
       "",
+      ".ts",
       ".js",
       ".json",
     ],
