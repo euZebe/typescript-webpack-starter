@@ -1,16 +1,10 @@
 import { Person } from './person';
 
-class Greeter {
-    constructor(public greeting: string) { }
-    greet() {
-        console.log("mission successful !!");
-        return "<h1>" + this.greeting + "</h1>";
-    }
-};
+const person1 = new Person("Armand", "Raynal de Maupertuis");
+document.body.innerHTML += person1.asListItem();
 
-const greeter = new Greeter("Hellooooo, Quentin !");
+const person2 = new Person("Eusèbe");
+document.body.innerHTML += person2.asListItem();
 
-document.body.innerHTML = greeter.greet();
-
-const person = new Person("James", "Bond");
-document.body.innerHTML += person.toString();
+const person3 = new Person("Don Lope", "de Villalobos y Sangrin");
+document.body.innerHTML += person3.asListItem();
