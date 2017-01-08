@@ -1,10 +1,24 @@
-import { Person } from './person';
+import { PersonGenerator } from "./persons-generator";
+import { Utils } from "./utils";
 
-const person1 = new Person("Armand", "Raynal de Maupertuis");
-document.body.innerHTML += person1.asListItem();
 
-const person2 = new Person("Eusèbe");
-document.body.innerHTML += person2.asListItem();
 
-const person3 = new Person("Don Lope", "de Villalobos y Sangrin");
-document.body.innerHTML += person3.asListItem();
+const listOfPersonsNode = document.getElementById("listOfPersons");
+
+const persons = PersonGenerator.generate();
+persons
+    .map(p => p.asListItemNode())
+    .forEach(childNode => listOfPersonsNode.appendChild(childNode));
+/* 
+Could also be written as:
+    listOfPersonsNode.appendChild(persons[0].asListItemNode())
+    listOfPersonsNode.appendChild(persons[1].asListItemNode())
+    listOfPersonsNode.appendChild(persons[2].asListItemNode())
+    listOfPersonsNode.appendChild(persons[3].asListItemNode())
+
+*/
+
+document.body.appendChild(persons[2].asDetailNode());
+
+// used to be check the displayed version is the current one
+Utils.logCurrentTime();

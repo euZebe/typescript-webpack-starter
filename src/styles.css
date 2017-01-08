@@ -2,3 +2,17 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: green;
 }
+
+div.card {
+    display: flex;
+    flex-direction: row-reverse;
+
+    border: 1px solid grey ;
+    padding: 5px;
+    margin: 5px;
+}
+div.card>div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
