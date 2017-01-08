@@ -1,5 +1,6 @@
+import { SuperHero } from './super-hero';
 import { Person } from "./person";
-import { Species } from "./species";
+import { Species } from './species';
 
 export class PersonGenerator {
 
@@ -13,6 +14,10 @@ export class PersonGenerator {
 
         const person4 = new Person(Species.human, "Raïs Kader");
 
-        return [person1, person2, person3, person4];
+        const hero = new SuperHero(Species.human, "Peter", "Parker");
+        hero.superPower = "réflexes";
+        hero.imageURL = "http://vignette4.wikia.nocookie.net/marvel-contestofchampions/images/0/0b/Spider-Man_(Classic)_portrait.png";
+
+        return [person1, person2, person3, person4, hero];
     }
 }

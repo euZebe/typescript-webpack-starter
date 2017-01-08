@@ -19,6 +19,7 @@ Could also be written as:
 */
 
 document.body.appendChild(persons[2].asDetailNode());
+document.body.appendChild(persons[4].asDetailNode());
 
 // used to be check the displayed version is the current one
 Utils.logCurrentTime();
