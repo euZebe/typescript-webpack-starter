@@ -1,25 +1,15 @@
-import { PersonGenerator } from "./persons-generator";
 import { Utils } from "./utils";
 
 
 
-const listOfPersonsNode = document.getElementById("listOfPersons");
+const tryInput = <HTMLInputElement> document.getElementById("try");
+const checkButton = document.getElementById("checkButton");
 
-const persons = PersonGenerator.generate();
-persons
-    .map(p => p.asListItemNode())
-    .forEach(childNode => listOfPersonsNode.appendChild(childNode));
-/* 
-Could also be written as:
-    listOfPersonsNode.appendChild(persons[0].asListItemNode())
-    listOfPersonsNode.appendChild(persons[1].asListItemNode())
-    listOfPersonsNode.appendChild(persons[2].asListItemNode())
-    listOfPersonsNode.appendChild(persons[3].asListItemNode())
+checkButton.onclick = function () {
+    console.log("clicked !" + tryInput.value);
+};
 
-*/
 
-document.body.appendChild(persons[2].asDetailNode());
-document.body.appendChild(persons[4].asDetailNode());
 
 // used to be check the displayed version is the current one
 Utils.logCurrentTime();
