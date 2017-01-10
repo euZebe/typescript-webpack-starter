@@ -1,4 +1,4 @@
-import { Game } from './game';
+import { Game } from "./game";
 export class GameComponent {
     game: Game;
 
@@ -7,7 +7,7 @@ export class GameComponent {
     comparatorField: HTMLElement;
     checkButton: HTMLButtonElement;
 
-    constructor(maxValue?: number) { 
+    constructor(maxValue?: number) {
         this.game = new Game(maxValue);
         this.tryInput = <HTMLInputElement> document.getElementById("try");
         this.triesField = document.getElementById("tries");
@@ -26,12 +26,11 @@ export class GameComponent {
         this.updateTries();
     }
 
-        
     updateTries () {
         this.triesField.innerText = this.game.tries.toString();
     }
 
-    displayComparator = function(compareValue) {
+    displayComparator (compareValue) {
         if (compareValue === 0) {
             this.comparatorField.innerText = `Trouvé en ${this.game.tries.length} coups !`;
             this.checkButton.disabled = true;
@@ -41,5 +40,4 @@ export class GameComponent {
             this.comparatorField.innerText = "trop bas...";
         }
     }
-
 }

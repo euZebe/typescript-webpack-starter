@@ -1,5 +1,5 @@
 export class Game {
-    
+
     tries: number[];
     private numberToFind: number;
 

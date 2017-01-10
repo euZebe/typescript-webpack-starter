@@ -1,5 +1,5 @@
 import { Utils } from "./utils";
-import { GameComponent } from './game-component';
+import { GameComponent } from "./game-component";
 
 const gameComponent = new GameComponent();
 
@@ -8,10 +8,10 @@ const tryInput = <HTMLInputElement> document.getElementById("try");
 
 
 tryInput.onkeypress = function(event) {
-    if (event.keyCode == 13) { // when Enter is pressed
+    if (event.keyCode === 13) { // when Enter is pressed
         gameComponent.checkValue(); // check value
     }
-}
+};
 
 // gives choice on how to submit value ; press Enter / click button
 checkButton.onclick = function () {
