@@ -34,7 +34,7 @@ export class GameComponent {
         if (compareValue === 0) {
             this.comparatorField.innerText = `Trouvé en ${this.game.tries.length} coups !`;
             this.checkButton.disabled = true;
-        } else if (compareValue === 1) {
+        } else if (compareValue > 0) {
             this.comparatorField.innerText = "trop haut...";
         } else {
             this.comparatorField.innerText = "trop bas...";
