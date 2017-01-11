@@ -8,7 +8,8 @@ export class Game {
      */
     constructor(max: number = 10) {
         this.tries = [];
-        this.generateNumber(max);
+
+        // Step#1 appeler generateNumber pour initialiser la partie
     }
 
     // set the numberToFind
@@ -23,15 +24,16 @@ export class Game {
      *         -1 if the tried value is greater than the numberToFind
      */
     checkValue(tryValue: number): number {
-        this.tries.push(tryValue);
-        let result: number;
-        if (tryValue === this.numberToFind) {
-            result = 0;
-        } else if (tryValue > this.numberToFind) {
-            result = 1;
-        } else {
-            result = -1;
-        }
-        return result;
+
+        // Step#4: ajouter la valeur saisie à la liste des nombres déjà saisis
+
+        /**
+         * Step#2: définir une variable de type number qui va recevoir:
+         * une valeur négative si le nombre saisi est inférieur à celui recherché
+         * 0 si le nombre saisi est égal à celui recherché
+         * une valeur positive si le nombre saisi est supérieur à celui recherché
+         * 
+         * retourner cette variable
+        */
     }
 }

@@ -1,4 +1,9 @@
 import { Game } from "./game";
+
+/**
+ * cette classe est la représentation graphique d'une partie de Nombre Mystère.
+ * Elle gère les interactions entre le modèle (l'instance de Game) et l'IHM (index.html)
+ */
 export class GameComponent {
     game: Game;
 
@@ -8,36 +13,43 @@ export class GameComponent {
     checkButton: HTMLButtonElement;
 
     constructor(maxValue?: number) {
-        this.game = new Game(maxValue);
-        this.tryInput = <HTMLInputElement> document.getElementById("try");
-        this.triesField = document.getElementById("tries");
-        this.comparatorField = document.getElementById("comparator");
-        this.checkButton = <HTMLButtonElement> document.getElementById("checkButton");
+        // Step#1 instancier l'attribut game
+
+        // Step#2 instancier tryInput en récupérant le composant HTML par son identifiant
+        
+        // Step#2 instancier checkButton en récupérant le composant HTML par son identifiant
+        
+        // Step#3 instancier comparatorField en récupérant le composant HTML par son identifiant
+
+        // Step#4 instancier triesField en récupérant le composant HTML par son identifiant
     }
 
     /**
      * launch comparison, update Comparator and Tries fields
      */
     checkValue(): void {
-        const intTry = parseInt(this.tryInput.value);
-        const compare = this.game.checkValue(intTry);
+        // Step#2 récupérer la valeur du champ tryInput
+        
+        // Step#2 appeler la méthode checkValue de game
 
-        this.displayComparator(compare);
-        this.updateTries();
+        // Step#3 appeler la méthode displayComparator qui prend en parametre un le retour de game.checkValue()
+
+        // Step#4 appeler la méthode updateTries 
     }
 
-    updateTries () {
-        this.triesField.innerText = this.game.tries.toString();
-    }
+    // Step#4 créer une méthode updateTries qui met à jour le champ triesField
 
-    displayComparator (compareValue) {
-        if (compareValue === 0) {
-            this.comparatorField.innerText = `Trouvé en ${this.game.tries.length} coups !`;
-            this.checkButton.disabled = true;
-        } else if (compareValue === 1) {
-            this.comparatorField.innerText = "trop haut...";
-        } else {
-            this.comparatorField.innerText = "trop bas...";
+    // Step#3 implémenter la méthode
+    displayComparator(compareValue): void {
+        // si compareValue vaut 0...
+        // mettre à jour le champ comparatorField avec le message `Trouvé en ${this.game.tries.length} coups !`
+        // ... et désactiver le bouton
+
+        // sinon, si compareValue est positive
+        // mettre à jour le champ comparatorField avec un message indiquant que le nombre saisi est trop grand
+
+        // sinon (si compareValue est négative)
+        // mettre à jour le champ comparatorField avec un message indiquant que le nombre saisi est trop bas
         }
     }
 }
