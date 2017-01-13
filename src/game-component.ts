@@ -13,43 +13,41 @@ export class GameComponent {
     checkButton: HTMLButtonElement;
 
     constructor(maxValue?: number) {
-        // Step#1 instancier l'attribut game
+        // Step#2 instanciate game attribute ; check in chrome debugger that you enter Game constructor
 
-        // Step#2 instancier tryInput en récupérant le composant HTML par son identifiant
-        
-        // Step#2 instancier checkButton en récupérant le composant HTML par son identifiant
-        
-        // Step#3 instancier comparatorField en récupérant le composant HTML par son identifiant
 
-        // Step#4 instancier triesField en récupérant le composant HTML par son identifiant
+        this.tryInput = <HTMLInputElement> document.getElementById("try");
+        this.checkButton = <HTMLButtonElement> document.getElementById("checkButton");
+        this.comparatorField  = document.getElementById("comparator");
+        this.triesField = document.getElementById("tries");
     }
 
     /**
      * launch comparison, update Comparator and Tries fields
      */
     checkValue(): void {
-        // Step#2 récupérer la valeur du champ tryInput
+        // Step#5 get value of tryInput attribute
         
-        // Step#2 appeler la méthode checkValue de game
+        // Step#6 call checkValue method of game attribute ; check in chrome debugger that you enter checkValue method of Game class
 
-        // Step#3 appeler la méthode displayComparator qui prend en parametre un le retour de game.checkValue()
+        // Step#8 call displayComparator method which takes the result of game.checkValue() as an input parameter
 
-        // Step#4 appeler la méthode updateTries 
+        // Step#11 call updateTries ; check result in the web page
     }
 
-    // Step#4 créer une méthode updateTries qui met à jour le champ triesField
+    // Step#10 create a method called updateTries, which update triesField
 
-    // Step#3 implémenter la méthode
+    // Step#9 implement the method ; check in the web page that the expected info message is displayed
     displayComparator(compareValue): void {
-        // si compareValue vaut 0...
-        // mettre à jour le champ comparatorField avec le message `Trouvé en ${this.game.tries.length} coups !`
-        // ... et désactiver le bouton
+        // if compareValue equals 0...
+        // update comparatorField with message `Trouvé en ${this.game.tries.length} coups !`
+        // ... and deactivate checkButton
 
-        // sinon, si compareValue est positive
-        // mettre à jour le champ comparatorField avec un message indiquant que le nombre saisi est trop grand
+        // else if compareValue is positive
+        // update comparatorField with message saying that the number is too high
 
-        // sinon (si compareValue est négative)
-        // mettre à jour le champ comparatorField avec un message indiquant que le nombre saisi est trop bas
+        // else (if compareValue is negative)
+        // update comparatorField with message saying that the number is too low
         }
     }
 }

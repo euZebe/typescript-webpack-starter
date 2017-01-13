@@ -9,7 +9,7 @@ export class Game {
     constructor(max: number = 10) {
         this.tries = [];
 
-        // Step#1 appeler generateNumber pour initialiser la partie
+        // Step#3 call generateNumber to initialize a game ; check in chrome debugger that numberToFind is initialized
     }
 
     // set the numberToFind
@@ -20,20 +20,21 @@ export class Game {
     /**
      * check the tried value, and add it to the array of tries.
      * @returns 0 if the tried value equals the numberToFind
-     *          1 if the tried value is lower than the numberToFind
-     *         -1 if the tried value is greater than the numberToFind
+     *          a negative number if the tried value is lower than numberToFind
+     *          a positive number if the tried value is greater than numberToFind
      */
     checkValue(tryValue: number): number {
 
-        // Step#4: ajouter la valeur saisie à la liste des nombres déjà saisis
+        // Step#?: ajouter la valeur saisie à la liste des nombres déjà saisis
 
         /**
-         * Step#2: définir une variable de type number qui va recevoir:
-         * une valeur négative si le nombre saisi est inférieur à celui recherché
-         * 0 si le nombre saisi est égal à celui recherché
-         * une valeur positive si le nombre saisi est supérieur à celui recherché
+         * Step#7: define a variable which gets 
+         * a negative value if tryValue is lower than the numberToFind
+         * 0 if both values are equal
+         * a positive value if tryValue is greater than the numberToFind
          * 
-         * retourner cette variable
+         * return this value ; check in chrome debugger that you the returned value has the expected result
         */
+        return 0; // to be removed when method is implemeted
     }
 }
