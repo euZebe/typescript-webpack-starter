@@ -4,12 +4,13 @@
   "description": "typescript + webpack starter",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --watch -d",
+    "start": "webpack && webpack-dev-server --content-base dist/",
     "build": "wepack --production"
   },
   "author": "euZebe",
   "license": "ISC",
   "devDependencies": {
+    "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.26.1",
     "cssnext-loader": "^1.0.1",
     "extract-text-webpack-plugin": "^1.0.1",

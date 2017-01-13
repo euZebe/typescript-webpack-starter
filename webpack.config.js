@@ -1,6 +1,7 @@
 var path = require("path")
 var webpack = require("webpack")
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
+var CopyWebpackPlugin = require("copy-webpack-plugin")
 
 // on peut passer à notre commande de build l'option --production
 // on récupère sa valeur ici en tant que booléen
@@ -34,7 +35,7 @@ module.exports = {
       "",
       ".ts",
       ".js",
-      ".json",
+      ".json"
     ],
   },
 
@@ -50,6 +51,7 @@ module.exports = {
     // ! \\ à noter que les loaders sont exécutés en ordre inverse
     // les premiers en dernier, en utilisant la sortie du suivant
     loaders: [
+      
       {
         // pour tous les fichiers qui finissent par .js
         test: /\.ts$/,
@@ -151,6 +153,14 @@ module.exports = {
   // contenu des modules, nous avons des plugins, plus globaux au processus
   plugins: (
     [
+      // copie *.html dans dist
+      new CopyWebpackPlugin(
+        [{
+            from:'src/*.html', 
+            flatten: true
+        }]),
+
+
       // une partie importante dans notre cas : on active l'extraction CSS (en
       // production seulement)
       new ExtractTextPlugin("[name].css", {disable: !production}),
